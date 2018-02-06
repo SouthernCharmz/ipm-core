@@ -15,7 +15,7 @@ Visit [BitShares.org](https://bitshares.org/) to learn about BitShares and join 
 **NOTE:** The official BitShares git repository location, default branch, and submodule remotes were recently changed. Existing
 repositories can be updated with the following steps:
 
-    git remote set-url origin https://github.com/bitshares/bitshares-core.git
+    git remote set-url origin https://github.com/W-B-S/ipm-core.git
     git checkout master
     git remote set-head origin --auto
     git pull
@@ -39,6 +39,8 @@ To build after all dependencies are installed:
     git checkout <LATEST_RELEASE_TAG>
     git submodule update --init --recursive
     cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+  for max osx  
+cmake -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib/libcrypto.a -DBOOST_ROOT=/usr/local/Cellar/boost@1.60/1.60.0 .
     make
 
 **NOTE:** BitShares requires an [OpenSSL](https://www.openssl.org/) version in the 1.0.x series. OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using `-DOPENSSL_INCLUDE_DIR`, `-DOPENSSL_SSL_LIBRARY`, and `-DOPENSSL_CRYPTO_LIBRARY`.
