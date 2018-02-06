@@ -1,4 +1,4 @@
-BitShares Core
+ IPM Core
 ==============
 * [Getting Started](#getting-started)
 * [Support](#support)
